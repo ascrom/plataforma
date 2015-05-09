@@ -1,0 +1,40 @@
+BEGIN TRANSACTION;
+CREATE TABLE `save` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`tiempo`	INTEGER NOT NULL,
+	`zona`	INTEGER NOT NULL,
+	`enemigos`	INTEGER NOT NULL
+);
+CREATE TABLE `recursos` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`imagenes`	BLOB NOT NULL,
+	`fondos`	BLOB NOT NULL,
+	`sprites`	BLOB NOT NULL
+);
+CREATE TABLE `personaje` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`nombre`	TEXT NOT NULL,
+	`raza`	TEXT NOT NULL,
+	`vida`	INTEGER NOT NULL
+);
+CREATE TABLE `niveles` (
+	`id`	INTEGER,
+	`fondo`	BLOB NOT NULL,
+	`objeto`	BLOB NOT NULL,
+	`miselaneo`	BLOB NOT NULL,
+	PRIMARY KEY(id)
+);
+CREATE TABLE `equipamento` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`nombre`	TEXT NOT NULL,
+	`valor`	INTEGER NOT NULL,
+	`fuerza`	INTEGER NOT NULL,
+	`duracion`	INTEGER
+);
+CREATE TABLE `atributos` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`fuerza`	INTEGER NOT NULL,
+	`velocidad`	INTEGER NOT NULL,
+	`inteligencia`	INTEGER NOT NULL
+);
+COMMIT;
